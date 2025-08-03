@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // New state for sidebar
 
   const pageClasses = {
     theme1: 'bg-theme1-bg text-theme1-text font-sans-theme1 min-h-screen p-8 pt-20 md:pt-8',

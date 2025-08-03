@@ -3,7 +3,9 @@ import { useTheme } from '../Contexts/ThemeContext';
 
 const ContactPage: React.FC = () => {
   const { theme } = useTheme();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // New state for sidebar
+
+  // Dynamic classes based on the current theme
   const pageClasses = {
     theme1: 'bg-theme1-bg text-theme1-text font-sans-theme1 min-h-screen p-8 pt-20 md:pt-8',
     theme2: 'bg-theme2-bg text-theme2-text font-serif-theme2 min-h-screen flex flex-col md:flex-row pt-16',

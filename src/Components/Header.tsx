@@ -25,10 +25,14 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 p-4 flex flex-col md:flex-row justify-between items-center z-50 transition-colors duration-300 ${headerClasses[theme]}`}
     >
+    {/* Top Row: Logo + Hamburger */}
       <div className="flex items-center justify-between w-full">
+        {/* name */}
         <Link to="/" className="text-2xl md:text-3xl font-bold text-center md:text-left w-full md:w-auto">
           My Multi-Theme App
         </Link>
+
+        {/* Hamburger Icon (visible on mobile only) */}
         <div className="md:hidden z-50">
           <button
             onClick={toggleMenu}
@@ -47,6 +51,8 @@ const Header: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Overlay Background for Mobile Menu */}
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-30 z-30 md:hidden"

@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products?limit=6');
+        const response = await fetch('https://fakestoreapi.com/products?limit=6'); // Fetch a few products
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -35,15 +35,17 @@ const HomePage: React.FC = () => {
     };
     fetchProducts();
   }, []);
+
+  // Dynamic classes based on the current theme
   const pageClasses = {
-    theme1: 'bg-theme1-bg text-theme1-text font-sans-theme1 min-h-screen p-8 pt-20 md:pt-8', 
-    theme2: 'bg-theme2-bg text-theme2-text font-serif-theme2 min-h-screen flex flex-col md:flex-row pt-16',
-    theme3: 'bg-theme3-bg text-theme3-text font-google-theme3 min-h-screen p-8 pt-20 md:pt-8', 
+    theme1: 'bg-theme1-bg text-theme1-text font-sans-theme1 min-h-screen p-8 pt-20 md:pt-8', // Adjust padding for fixed header
+    theme2: 'bg-theme2-bg text-theme2-text font-serif-theme2 min-h-screen flex flex-col md:flex-row pt-16', // Adjust padding for fixed header, use flex for sidebar layout
+    theme3: 'bg-theme3-bg text-theme3-text font-google-theme3 min-h-screen p-8 pt-20 md:pt-8', // Adjust padding for fixed header
   };
 
   const contentClasses = {
     theme1: 'max-w-4xl mx-auto space-y-6',
-    theme2: `flex-1 p-4 md:p-8 ${isSidebarOpen ? 'ml-[250px] md:ml-0' : 'md:ml-[250px]'}`, 
+    theme2: `flex-1 p-4 md:p-8 ${isSidebarOpen ? 'ml-[250px] md:ml-0' : 'md:ml-[250px]'}`, // Conditional margin and padding
     theme3: 'max-w-6xl mx-auto space-y-8',
   };
 
