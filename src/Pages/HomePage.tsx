@@ -63,6 +63,7 @@ const HomePage: React.FC = () => {
     <div className={`transition-all duration-500 ${pageClasses[theme]}`}>
       {theme === 'theme2' && (
         <>
+          {/* Mobile Sidebar Toggle Button */}
           <button
             className="md:hidden fixed top-20 left-4 z-40 bg-gray-700 text-white p-2 rounded-full shadow-lg"
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -78,15 +79,19 @@ const HomePage: React.FC = () => {
               </svg>
             )}
           </button>
+
+          {/* Mobile Sidebar Overlay */}
           {isSidebarOpen && (
             <div
               className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
               onClick={() => setIsSidebarOpen(false)}
             ></div>
           )}
+
+          {/* Sidebar - Conditional display for desktop, mobile uses toggle */}
           <aside
             className={`fixed md:static top-16 md:top-auto left-0 w-[250px] h-[calc(100vh-64px)] bg-gray-900 text-white p-4 shadow-xl transition-all duration-300 z-40
-              ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`} 
+              ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`} // Control mobile visibility
           >
             <h3 className="text-xl font-bold mb-4">Sidebar</h3>
             <ul className="space-y-2">
@@ -98,7 +103,7 @@ const HomePage: React.FC = () => {
         </>
       )}
 
-      <div className={`${contentClasses[theme]} transition-all duration-300 pt-8`}>
+      <div className={`${contentClasses[theme]} transition-all duration-300 pt-8`}> {/* Added padding top here to avoid content going under the header */}
         <h1 className={`text-4xl font-bold mb-4 ${theme === 'theme3' ? 'text-center' : ''}`}>
           Welcome to Our Multi-Theme App
         </h1>

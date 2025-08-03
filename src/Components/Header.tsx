@@ -53,6 +53,8 @@ const Header: React.FC = () => {
           onClick={toggleMenu}
         ></div>
       )}
+
+      {/* Mobile/Responsive Navigation & Theme Selector */}
       <nav
         className={`${
           isMenuOpen
@@ -89,6 +91,8 @@ const Header: React.FC = () => {
             </Link>
           </li>
         </ul>
+
+        {/* Theme Selector */}
         <div className="mt-4 md:mt-0 md:ml-4 w-full md:w-auto">
           <select
             id="theme-switcher"
