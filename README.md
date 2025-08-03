@@ -54,8 +54,10 @@ Getting Started
 npm install
 npm start
 http://localhost:3000
-
-Code Structure Highlights
+<br/>
+Live: https://funny-faun-46df98.netlify.app/
+<br/>
+Code Structure <br/><br/>
 src/contexts/ThemeContext.tsx: Manages the current theme state and persistence.
 
 src/components/Header.tsx: Contains the main navigation and theme switcher dropdown.
